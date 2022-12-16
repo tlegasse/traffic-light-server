@@ -1,0 +1,18 @@
+{
+  "name": "traffic-light-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd client && yarn start\" \"cd server && yarn start\"",
+    "postinstall": "(cd client && yarn); (cd server && yarn)",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20"
+  }
+}
