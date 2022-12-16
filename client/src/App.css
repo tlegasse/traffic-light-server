@@ -1,0 +1,96 @@
+.App {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #011627;
+    color: white;
+}
+
+.App:has(input#pause:not(:checked)) .light-body:after {
+    content: "🔒";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 15px;
+}
+
+.App:has(input#pause:checked) input.light + label {
+    cursor: pointer;
+}
+
+.light-body {
+    position: relative;
+    background-color: darkgreen;
+    width: auto;
+    padding: 5px;
+    display: inline-block;
+    margin-bottom: 35px;
+}
+
+input.light {
+    display: none;
+}
+
+input.light + label {
+    user-select: none;
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #333;
+    border-radius: 100%;
+    border: 1px solid #333;
+    margin: 5px;
+}
+
+input.light[value="red"]:checked + label {
+    background-color: red;
+}
+
+input.light[value="yellow"]:checked + label {
+    background-color: yellow;
+}
+
+input.light[value="green"]:checked + label {
+    background-color: green;
+}
+
+input#pause {
+    display: none;
+}
+
+input#pause + label {
+    user-select: none;
+    cursor: pointer;
+}
+
+input#pause + label:after {
+    content: "Play";
+    background-color: blue;
+    color: white;
+    font-size: 35px;
+    padding-bottom: 9px;
+    padding: 0 10px;
+    margin-bottom: 35px;
+    display: block;
+}
+
+input#pause:checked + label:after {
+    content: "Pause";
+    background-color: red;
+}
+
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+}
+
+select {
+    margin-left: 15px;
+}
